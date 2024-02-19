@@ -1,0 +1,2 @@
+{"/home/tematz/Desktop/clean-architecture/hexagonal-architecture/src/index.ts": {"path":"/home/tematz/Desktop/clean-architecture/hexagonal-architecture/src/index.ts","statementMap":{"0":{"start":{"line":2,"column":4},"end":{"line":2,"column":null}},"1":{"start":{"line":1,"column":0},"end":{"line":1,"column":16}}},"fnMap":{"0":{"name":"somar","decl":{"start":{"line":1,"column":16},"end":{"line":1,"column":21}},"loc":{"start":{"line":1,"column":42},"end":{"line":3,"column":1}}}},"branchMap":{},"s":{"0":1,"1":1},"f":{"0":1},"b":{}}
+}
