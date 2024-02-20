@@ -1,15 +1,14 @@
-import { terminal } from "terminal-kit";
 import Carro from "./Carro";
 
-export default function corrida(carro: Carro) {
+export default function corrida(carro: Carro, logger: (str: string) => void = console.log) {
 
     Array.from({ length: 10 }).forEach(() => {
         carro.acelerar()
-        terminal.red(`\nVelocidade: ${carro.velocidadeAtual}`)
+        logger(`\nVelocidade: ${carro.velocidadeAtual}`)
     })
 
     Array.from({ length: 10 }).forEach(() => {
         carro.frear()
-        terminal.red(`\nVelocidade: ${carro.velocidadeAtual}`)
+        logger(`\nVelocidade: ${carro.velocidadeAtual}`)
     })
 }
