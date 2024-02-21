@@ -12,6 +12,7 @@
     "author": "Matheus Vieira Nascimento Oliveira",
     "license": "ISC",
     "devDependencies": {
+        "@types/bcrypt": "^5.0.2",
         "@types/jest": "^29.5.3",
         "@types/node": "^20.4.9",
         "@types/terminal-kit": "^2.5.6",
@@ -22,6 +23,7 @@
         "typescript": "^5.1.6"
     },
     "dependencies": {
+        "bcrypt": "^5.1.1",
         "terminal-kit": "^3.0.1"
     }
 }
