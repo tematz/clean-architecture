@@ -9,19 +9,15 @@ export type Entrada = {
     senha: string
 }
 
-export type Saida = {
-    usuario: Usuario
-    token: string
-}
 
-export default class LoginUsuario implements CasoDeUso<Entrada, Saida> {
+export default class LoginUsuario implements CasoDeUso<Entrada, Usuario> {
 
     constructor(
         private repositorio: RepositorioUsuario,
         private provedorCripto: ProvedorCriptografia
     ) { }
 
-    async executar(entrada: Entrada): Promise<Saida> {
+    async executar(entrada: Entrada): Promise<Usuario> {
 
         const usuarioExistente = await this.repositorio.buscarPorEmail(entrada.email)
 
@@ -31,6 +27,6 @@ export default class LoginUsuario implements CasoDeUso<Entrada, Saida> {
 
         if (!mesmaSenha) throw new Error(Erros.SENHA_INCORRETA)
 
-        return { usuario: { ...usuarioExistente, senha: undefined }, token: '' }
+        return { ...usuarioExistente, senha: undefined }
     }
 }

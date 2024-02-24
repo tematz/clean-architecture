@@ -5,7 +5,7 @@ import SenhaCripto from './external/auth/SenhaCripto'
 import RegistrarUsuario from './core/usuario/service/RegistrarUsuario'
 import RegistrarUsuarioController from './external/api/RegistrarUsuarioControler'
 import LoginUsuario from './external/db/LoginUsuario'
-import LoginUsuarioController from './external/api/LoginUsuarioControler copy'
+import LoginUsuarioController from './external/api/LoginUsuarioControler'
 
 dotenv.config()
 
