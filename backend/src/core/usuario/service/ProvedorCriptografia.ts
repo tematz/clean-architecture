@@ -3,4 +3,5 @@
 // A porta faz parte do core da sua aplicação
 export default interface ProvedorCriptografia {
     criptografar(texto: string): string
+    comparar(senha: string, senhaCriptografada: string): boolean
 }
