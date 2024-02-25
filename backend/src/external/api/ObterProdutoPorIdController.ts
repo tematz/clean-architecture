@@ -6,11 +6,15 @@ export default class ObterProdutoPorIdController {
 
     constructor(
         servidor: Express,
-        casoDeUso: ObterProdutoPorId
+        casoDeUso: ObterProdutoPorId,
+        ...middlewares: any[]
     ) {
-        servidor.post('/api/produtos/:id', async (req, resp) => {
+        servidor.post('/api/produtos/:id', ...middlewares, async (req, resp) => {
             try {
-                const produto = await casoDeUso.executar((req.params as any))
+                const produto = await casoDeUso.executar({
+                    produtoId: (req.params as any).id,
+                    usuario: (req as any).usuario
+                })
 
                 resp.status(200).send(produto)
 

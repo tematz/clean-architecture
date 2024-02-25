@@ -1,10 +1,21 @@
 import CasoDeUso from "@/core/shared/CasoDeUso";
 import Produto from "../model/Produto";
+import Usuario from "@/core/usuario/model/Usuario";
 
-export default class ObterProdutoPorId implements CasoDeUso<string, Produto> {
+export type Entrada = {
+    produtoId: string
+    usuario: Usuario
+}
 
-    async executar(id: string): Promise<Produto> {
+export default class ObterProdutoPorId implements CasoDeUso<Entrada, Produto> {
 
-        return { id, nome: 'Produto 1', preco: 10.00 }
+    async executar(entrada: Entrada): Promise<Produto> {
+
+        return {
+            id: entrada.produtoId,
+            nome: 'Produto 1',
+            preco: 10.00,
+            consultaPor: entrada.usuario.email
+        }
     }
 }

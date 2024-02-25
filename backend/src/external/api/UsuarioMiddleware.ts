@@ -18,7 +18,7 @@ export default function UsuarioMiddleware(repositorio: RepositorioUsuario) {
 
         const usuarioToken = provedorJwt.obter(token) as Usuario
 
-        const usuario = repositorio.buscarPorEmail(usuarioToken.email)
+        const usuario = await repositorio.buscarPorEmail(usuarioToken.email)
 
         if (!usuario) {
             acessoNegado()

@@ -8,6 +8,7 @@ import LoginUsuario from './external/db/LoginUsuario'
 import LoginUsuarioController from './external/api/LoginUsuarioController'
 import ObterProdutoPorId from './core/produto/service/ObterProdutoPorId'
 import ObterProdutoPorIdController from './external/api/ObterProdutoPorIdController'
+import UsuarioMiddleware from './external/api/UsuarioMiddleware'
 
 dotenv.config()
 
@@ -30,6 +31,7 @@ new RegistrarUsuarioController(app, registrarUsuario)
 new LoginUsuarioController(app, loginUsuario)
 
 // Rotas protegidas
+const usuarioMid = UsuarioMiddleware(repositorioUsuario)
 
 const obterProdutoPorId = new ObterProdutoPorId()
-new ObterProdutoPorIdController(app, obterProdutoPorId)
+new ObterProdutoPorIdController(app, obterProdutoPorId, usuarioMid)
